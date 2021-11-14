@@ -1,0 +1,335 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selem-Portfolio</title>
+    <link rel="icon" href="images/icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/master.css">
+    <link rel="stylesheet" href="styles/all.min.css">
+    <link rel="stylesheet" href="styles/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Start Particles Div -->
+    <div></div>
+    <!-- End Particles Div -->
+
+    <!-- Start Master Div -->
+    <div class="master">
+
+        <!-- Start Fixed  Elements -->
+        <div class="fixed-section">
+
+            <!-- Sound Icon -->
+            <div class="sound-icon stopped">
+                <img src="images/icons/sound.png" alt="sound">
+            </div>
+            <!-- Sound Icon -->
+
+            <!-- Transition Dots -->
+            <ul class="tr-dots">
+                <li class="active" data-slide="1">
+                    <span>01/05</span>
+                </li>
+                <li data-slide="2">
+                    <span>02/05</span>
+                </li>
+                <li data-slide="3">
+                    <span>03/05</span>
+                </li>
+                <li data-slide="4">
+                    <span>04/05</span>
+                </li>
+                <li data-slide="5">
+                    <span>05/05</span>
+                </li>
+            </ul>
+            <!-- Transition Dots -->
+
+            <!-- Start Pagination -->
+            <div class="pagin">
+                <span class="left disabled">
+                    <i class="fas fa-chevron-up"></i>
+                </span>
+                <span class="right">
+                    <i class="fas fa-chevron-down"></i>
+                </span>
+            </div>
+            <!-- End Pagination -->
+
+            <!-- Start See Projects -->
+            <div class="see-all">
+                See All Projects
+            </div>
+            <!-- End See Projects -->
+
+            <!-- Start Changable Elements -->
+            <div class="changed-section">
+                <!-- Section-1 -->
+                <div class="sec sec-1 actived-sec">
+                    <div id="particles-js"></div>
+                    <div class="content">
+                        <h1>
+                            <span class="animate__animated special">H</span>
+                            <span class="animate__animated">i</span>
+                            <span class="animate__animated">,</span>
+                            <br>
+                            <span class="animate__animated">I</span>
+                            <span class="animate__animated">'</span>
+                            <span class="animate__animated">m</span>
+                            <span class="animate__animated special">&nbsp;M</span>
+                            <span class="animate__animated">o</span>
+                            <span class="animate__animated">h</span>
+                            <span class="animate__animated">a</span>
+                            <span class="animate__animated">m</span>
+                            <span class="animate__animated">e</span>
+                            <span class="animate__animated">d</span>
+                            <span class="animate__animated special">&nbsp;S</span>
+                            <span class="animate__animated">e</span>
+                            <span class="animate__animated">l</span>
+                            <span class="animate__animated">e</span>
+                            <span class="animate__animated">m</span>
+                            <br>
+                            <span class="animate__animated special">W</span>
+                            <span class="animate__animated">e</span>
+                            <span class="animate__animated">b</span>
+                            <span class="animate__animated special">&nbsp;D</span>
+                            <span class="animate__animated">e</span>
+                            <span class="animate__animated">v</span>
+                            <span class="animate__animated">e</span>
+                            <span class="animate__animated">l</span>
+                            <span class="animate__animated">o</span>
+                            <span class="animate__animated">p</span>
+                            <span class="animate__animated">e</span>
+                            <span class="animate__animated">r</span>
+                            <span class="animate__animated">.</span>
+                        </h1>
+                        <p id="element">  </p>
+                    </div>
+                </div>
+                <!-- Section-1 -->
+
+
+                <!-- Section-2 -->
+                <div class="sec sec-2">
+                    <canvas id=c></canvas>
+                    <div class="content">
+                        <h2>My-Skills</h2>
+                        <div class="skills">
+                            <div class="row">
+                                <div class="skill col">test</div>
+                                <div class="skill col">test</div>
+                                <div class="skill col">test</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section-2 -->
+
+                <!-- Section-3 -->
+                <div class="sec sec-3">
+                    <div class="content">
+                        <h2>Section-3</h2>
+                        <p>Front end creative dev</p>=
+                    </div>
+                </div>
+                <!-- Section-3 -->
+
+                <!-- Section-4 -->
+                <div class="sec sec-4">
+                    <div class="content">
+                        <h2>Section-4</h2>
+                        <p>Front end creative dev</p>=
+                    </div>
+                </div>
+                <!-- Section-4 -->
+
+                <!-- Section-5  -->
+                <div class="sec sec-5">
+                    <div class="content">
+                        <h2>Section-5</h2>
+                        <p>Front end creative dev</p>=
+                    </div>
+                </div>
+                <!-- Section-5 -->
+
+            </div>
+            <!-- End Changable Elements -->
+
+        </div>
+        <!-- End Fixed  Elements -->
+
+
+    </div>
+    <!-- End Master Div -->
+
+    <!-- Start Sound -->
+    <audio src="sound/0.mp3" loop id="sound"></audio>
+    <!-- Start Sound -->
+
+    <!-- Start Scripts -->
+    <script src="scripts/particles.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/hammer.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/master.js"></script>
+    <script src="scripts/type-it.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            new TypeIt("#element", {
+            strings: ["&lt;/ Creative Front-End Developer &gt;"],
+            }).go();
+        });
+    </script>
+        <!-- Section 2 animation -->
+        <script>
+            var w = c.width = window.innerWidth,
+                h = c.height = window.innerHeight,
+                ctx = c.getContext('2d'),
+
+                opts = {
+
+                    len: 20,
+                    count: 50,
+                    baseTime: 10,
+                    addedTime: 10,
+                    dieChance: .05,
+                    spawnChance: 1,
+                    sparkChance: .1,
+                    sparkDist: 10,
+                    sparkSize: 2,
+
+                    color: 'hsl(hue,100%,light%)',
+                    baseLight: 50,
+                    addedLight: 10, // [50-10,50+10]
+                    shadowToTimePropMult: 6,
+                    baseLightInputMultiplier: .01,
+                    addedLightInputMultiplier: .02,
+
+                    cx: w / 2,
+                    cy: h / 2,
+                    repaintAlpha: .04,
+                    hueChange: .1
+                },
+
+                tick = 0,
+                lines = [],
+                dieX = w / 2 / opts.len,
+                dieY = h / 2 / opts.len,
+
+                baseRad = Math.PI * 2 / 6;
+
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, w, h);
+
+            function loop() {
+
+                window.requestAnimationFrame(loop);
+
+                ++tick;
+
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.shadowBlur = 0;
+                ctx.fillStyle = 'rgba(0,0,0,alp)'.replace('alp', opts.repaintAlpha);
+                ctx.fillRect(0, 0, w, h);
+                ctx.globalCompositeOperation = 'lighter';
+
+                if (lines.length < opts.count && Math.random() < opts.spawnChance)
+                    lines.push(new Line);
+
+                lines.map(function (line) {
+                    line.step();
+                });
+            }
+
+            function Line() {
+
+                this.reset();
+            }
+            Line.prototype.reset = function () {
+
+                this.x = 0;
+                this.y = 0;
+                this.addedX = 0;
+                this.addedY = 0;
+
+                this.rad = 0;
+
+                this.lightInputMultiplier = opts.baseLightInputMultiplier + opts
+                    .addedLightInputMultiplier * Math.random();
+
+                this.color = opts.color.replace('hue', tick * opts.hueChange);
+                this.cumulativeTime = 0;
+
+                this.beginPhase();
+            }
+            Line.prototype.beginPhase = function () {
+
+                this.x += this.addedX;
+                this.y += this.addedY;
+
+                this.time = 0;
+                this.targetTime = (opts.baseTime + opts.addedTime * Math.random()) | 0;
+
+                this.rad += baseRad * (Math.random() < .5 ? 1 : -1);
+                this.addedX = Math.cos(this.rad);
+                this.addedY = Math.sin(this.rad);
+
+                if (Math.random() < opts.dieChance || this.x > dieX || this.x < -dieX || this.y >
+                    dieY || this.y < -dieY)
+                    this.reset();
+            }
+            Line.prototype.step = function () {
+
+                ++this.time;
+                ++this.cumulativeTime;
+
+                if (this.time >= this.targetTime)
+                    this.beginPhase();
+
+                var prop = this.time / this.targetTime,
+                    wave = Math.sin(prop * Math.PI / 2),
+                    x = this.addedX * wave,
+                    y = this.addedY * wave;
+
+                ctx.shadowBlur = prop * opts.shadowToTimePropMult;
+                ctx.fillStyle = ctx.shadowColor = this.color.replace('light', opts.baseLight + opts
+                    .addedLight * Math.sin(this.cumulativeTime * this.lightInputMultiplier));
+                ctx.fillRect(opts.cx + (this.x + x) * opts.len, opts.cy + (this.y + y) * opts.len, 2,
+                    2);
+
+                if (Math.random() < opts.sparkChance)
+                    ctx.fillRect(opts.cx + (this.x + x) * opts.len + Math.random() * opts.sparkDist * (
+                            Math.random() < .5 ? 1 : -1) - opts.sparkSize / 2, opts.cy + (this.y + y) *
+                        opts.len + Math.random() * opts.sparkDist * (Math.random() < .5 ? 1 : -1) - opts
+                        .sparkSize / 2, opts.sparkSize, opts.sparkSize)
+            }
+            loop();
+
+            window.addEventListener('resize', function () {
+
+                w = c.width = window.innerWidth;
+                h = c.height = window.innerHeight;
+                ctx.fillStyle = 'black';
+                ctx.fillRect(0, 0, w, h);
+
+                opts.cx = w / 2;
+                opts.cy = h / 2;
+
+                dieX = w / 2 / opts.len;
+                dieY = h / 2 / opts.len;
+            });
+        </script>
+        <!-- Section 2 animation -->
+    <!-- End Scripts -->
+</body>
+
+</html>
