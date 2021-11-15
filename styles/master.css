@@ -3,18 +3,27 @@
     font-family: freight;
     src: url(../fonts/FreightMicro-Book.woff);
 }
+
 @font-face {
     font-family: freightM;
     src: url(../fonts/FreightMicro-Medium.woff);
 }
+
 @font-face {
     font-family: walsheimM;
     src: url(../fonts/gt-walsheim-medium-web.woff);
 }
+
 @font-face {
     font-family: walsheim;
     src: url(../fonts/gt-walsheim-web.woff);
 }
+
+@font-face {
+    font-family: Mochiy Pop P One;
+    src: url(../fonts/MochiyPopPOne-Regular.ttf);
+}
+
 /* Fonts */
 
 
@@ -31,24 +40,16 @@ body {
 :root {
     --main-color: #E91E63;
 }
-.sec-heading {
-    font-size: 11rem;
-    position: fixed;
-    color: #65283d12;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: tahoma;
-    font-weight: 900;
-}
+
 .canva {
     position: fixed;
     z-index: -1;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     opacity: .2;
 }
+
 /* .disabled {opacity: .5; pointer-events: none;} */
 #particles-js {
     z-index: -1;
@@ -126,7 +127,7 @@ body {
 .master .fixed-section .tr-dots li span {
     position: absolute;
     top: -5px;
-    left: -42px;
+    left: -45px;
     font-family: Freight, helvetica, arial, sans-serif;
     font-size: 1.1REM;
     opacity: 0;
@@ -189,6 +190,23 @@ body {
 /* Start Fixed Elemnts */
 
 /* Start Changable Elements */
+.master .changed-section .animated-heading {
+    font-size: 4rem;
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.master .changed-section .animated-heading span {
+    color: #fff;
+    display: inline-block;
+    transition: color .3s ease-in-out;
+    margin-left: -10px;
+    opacity: 0;
+}
+
+.master .changed-section .animated-heading span.special {
+    color: var(--main-color) !important;
+}
+
 .master .changed-section .sec {
     position: fixed;
     top: 100vh;
@@ -197,6 +215,7 @@ body {
     width: 100%;
     height: 100%;
 }
+
 .master .changed-section .sec .content {
     position: absolute;
     top: 50%;
@@ -210,8 +229,10 @@ body {
     top: 0
 }
 
+/* Section-1 */
+
 .master .changed-section .sec-1 {
-    background-image: url(../images/1.jpg);
+    background-image: url(../images/pat.png);
     background-size: cover;
     background-position: right center;
     color: #fff;
@@ -232,39 +253,6 @@ body {
     font-size: 4rem;
 }
 
-.master .changed-section .sec-1 .content h1 span {
-    color: #fff;
-    display: inline-block;
-    transition: color .3s ease-in-out;
-    margin-left: -10px;
-    opacity: 0;
-}
-
-/* Section-2 */
-.changed-section .sec-2 .skills .skill {
-    background-color: #e919560d;
-    height: 200px;
-    border-radius: 2px;
-    text-align: center;
-    padding: 20px 0;
-    /* box-shadow: 8px 2px 10px #31313126, -2px -2px 10px #3131312b; */
-    margin-right: 20px;
-    margin-bottom: 20px;
-    border: 2px solid #cccccc21
-}
-.changed-section .sec-2 .skills .skill .progress {
-    background-color: #e9ecef1a;
-    border-radius: 0;
-}
-/* Section-2 */
-
-/* .master .changed-section .sec-1 .content h1 span:hover {
-        color: red;
-    } */
-.master .changed-section .sec-1 .content h1 span.special {
-    color: var(--main-color) !important;
-}
-
 .master .changed-section .sec-1 .content p {
     color: #7e7e7e;
     margin-left: 35px;
@@ -272,7 +260,71 @@ body {
     font-family: 'walsheimM';
     font-size: 1.2rem;
 }
+.master .changed-section .sec-1 .content .social {
+    position: fixed;
+    top: 250px;
+    left: -73px;
+    display: flex;
+    flex-direction: column;
+}
+.master .changed-section .sec-1 .content .social a{
+    text-decoration: none;
+    color: #ffffffa6;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: showLinks .5s linear forwards;
+    animation-delay: 1s;
+    display: inline-block;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+    background-color: #eeeeee4a;
+    text-align: center;
+    border-radius: 2px;
+}
+.master .changed-section .sec-1 .content .social a:hover {
+    color: #ffffff;
+}
+@keyframes showLinks {
+    to {
+        opacity: 1;
+    }
+}
+/* Section-1 */
+
+/* Section-2 */
+.changed-section .sec-2 .skills{
+    background-color: #4848484d;
+    padding: 30px;
+    border: 1px solid #cccccc30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.changed-section .sec-2 .skills .skill h4 {
+    margin: 15px 0 5px 0;
+    font-size: .9rem;
+    font-family: sans-serif;
+}
+
+.changed-section .sec-2 .skills h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.changed-section .sec-2 .skills .skill .progress {
+    background-color: #e9ecef1a;
+    /* border-radius: 0; */
+    height: 3px;
+}
+.changed-section .sec-2 .skills .skill .progress .progress-bar {
+    width: 0;
+    transition: width 2s ease-in-out;
+}
+
+/* Section-2 */
 
 /* End Changable Elements */
 
 /* End Master */
+
+/* Start Bootloader */

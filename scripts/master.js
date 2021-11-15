@@ -22,25 +22,70 @@ $('.master .fixed-section .sound-icon').onclick = function () {
 };
 
 // Animated Letters On Reload
-let letters = [...$_('.changed-section .sec-1 h1 span')];
-let i = 0;
-let lettersInterval = setInterval(() => {
-    if (i < letters.length) {
-        if (letters[i].classList.contains('special')) {
-            letters[i].classList.add('animate__jackInTheBox');
+let lettersSec1 = [...$_('.changed-section .sec-1 h1 span')];
+let lettersSec2 = [...$_('.changed-section .sec-2 h2 span')];
+let lettersSec2Finished = false;
+
+function animatedLetters(letters) {
+    let i = 0;
+    let lettersInterval = setInterval(() => {
+        if (i < letters.length) {
+            if (letters[i].classList.contains('special')) {
+                letters[i].classList.add('animate__jackInTheBox');
+            } else {
+                letters[i].classList.add('animate__bounceIn');
+            }
+            i++;
         } else {
-            letters[i].classList.add('animate__bounceIn');
+            clearInterval(lettersInterval);
+            for (let letter of letters) {
+                letter.classList.remove('animate__bounceIn');
+                letter.classList.remove('animate__jackInTheBox');
+                letter.style.opacity = 1;
+            }
         }
-        i++;
-    } else {
-        clearInterval(lettersInterval);
-        for (let letter of letters) {
-            letter.classList.remove('animate__bounceIn');
-            letter.classList.remove('animate__jackInTheBox');
-            letter.style.opacity = 1;
+    }, 100);
+};
+animatedLetters(lettersSec1);
+
+
+// Animated progrss bar
+function animateProgress() {
+    let bars = [...$_('.skills .progress .progress-bar')];
+    for (let bar of bars) {
+        bar.style.width = bar.getAttribute('aria-valuenow') + '%';
+    };
+};
+
+// Animated Letters
+function animatedHoveredLetters(animatedElements) {
+    function stopAnimate() {
+        for (let animE of animatedElements) {
+            if (animE.classList.contains('animate__rubberBand')) {
+                animE.classList.remove('animate__rubberBand');
+            }
+        };
+    }
+    setTimeout(stopAnimate, 1000);
+
+    function strLettersAnime(animE) {
+        if (animE.classList.contains('animate__rubberBand')) {
+            animE.classList.remove('animate__rubberBand');
+            setTimeout(() => {
+                animE.classList.add('animate__rubberBand');
+            }, 10);
+        } else {
+            animE.classList.add('animate__rubberBand');
         }
     }
-}, 100);
+    for (let animE of animatedElements) {
+        animE.addEventListener('mouseenter', function (e) {
+            strLettersAnime(animE);
+        });
+    };
+};
+animatedHoveredLetters(lettersSec1);
+animatedHoveredLetters(lettersSec2);
 
 // TR Dots Utility
 let secNum = 1;
@@ -65,7 +110,14 @@ trDots.forEach(function (li) {
             $('.pagin .left').classList.add('disabled');
         } else {
             $('.pagin .left').classList.remove('disabled');
-        }
+        };
+        if (li.dataset.slide == '2' && lettersSec2Finished == false) {
+            window.setTimeout(() => {
+                animatedLetters(lettersSec2);
+                animateProgress();
+                lettersSec2Finished = true;
+            }, 500)
+        };
     })
     // Delete active from dots while hovering
     li.addEventListener('mouseenter', function () {
@@ -112,7 +164,14 @@ function paginRight() {
     activatedDot = $('.fixed-section .tr-dots .active');
     window.setTimeout(() => {
         paginRightFinished = true;
-    }, 1000)
+    }, 1000);
+    if (lettersSec2Finished == false) {
+        window.setTimeout(() => {
+            animatedLetters(lettersSec2);
+            animateProgress();
+            lettersSec2Finished = true;
+        }, 500)
+    };
 }
 
 function paginLeft() {
@@ -135,7 +194,7 @@ $('.pagin .right').onclick = function () {
         paginRight();
     } else {
         console.log('not finished');
-    }
+    };
 };
 $('.pagin .left').onclick = function () {
     if (paginLeftFinished == true) {
@@ -143,34 +202,6 @@ $('.pagin .left').onclick = function () {
     } else {
         console.log('not finished');
     }
-};
-
-// Animated Letters
-let animatedElements = [...$_('.sec-1 h1 span')];
-
-function stopAnimate() {
-    for (let animE of animatedElements) {
-        if (animE.classList.contains('animate__rubberBand')) {
-            animE.classList.remove('animate__rubberBand');
-        }
-    };
-}
-setTimeout(stopAnimate, 1000);
-
-function strLettersAnime(animE) {
-    if (animE.classList.contains('animate__rubberBand')) {
-        animE.classList.remove('animate__rubberBand');
-        setTimeout(() => {
-            animE.classList.add('animate__rubberBand');
-        }, 10);
-    } else {
-        animE.classList.add('animate__rubberBand');
-    }
-}
-for (let animE of animatedElements) {
-    animE.addEventListener('mouseenter', function (e) {
-        strLettersAnime(animE);
-    });
 };
 
 // See All Projects Button

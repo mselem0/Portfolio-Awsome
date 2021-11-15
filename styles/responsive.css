@@ -1,0 +1,48 @@
+/* 
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+*/
+
+/* Start Section-1 */
+@media (max-width: 576px) {
+    .master .changed-section .sec-1 .content {
+        left: 0;
+        padding: 25px
+    }
+    .master .changed-section .sec-1 .content h1 {
+        font-size: 24px;
+    }
+    .master .changed-section .animated-heading span {
+        margin-left: -3px;
+
+    }
+    .master .changed-section .sec-1 .content p {
+        font-size: 15px;
+        margin-left: 15px;
+    }
+}
+/* End Section-1 */
+
+/* Start Section-2 */
+@media (max-width: 576px) {
+    .master .changed-section .sec-2 img {
+        height: 100px;
+        width: 100px !important;
+    }
+    .changed-section .sec-2 .skills h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+}
+/* End Section-2 */
