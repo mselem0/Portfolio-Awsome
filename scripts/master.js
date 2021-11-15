@@ -69,7 +69,6 @@ trDots.forEach(function (li) {
     })
     // Delete active from dots while hovering
     li.addEventListener('mouseenter', function () {
-        console.log(activatedDot);
         for (let sib of siblings) {
             sib.classList.remove('active');
         };
@@ -91,7 +90,11 @@ function trActivate(slideNum) {
     }
 }
 let sections = [...$_('.sec')];
-$('.pagin .right').onclick = function () {
+let paginRightFinished = true;
+let paginLeftFinished = true;
+
+function paginRight() {
+    paginRightFinished = false;
     for (let sec of sections) {
         sec.classList.remove('actived-sec');
     }
@@ -106,20 +109,40 @@ $('.pagin .right').onclick = function () {
         $('.pagin .left').classList.add('disabled');
         trActivate(parseInt(secNum));
     }
-};
-$('.pagin .left').onclick = function () {
+    activatedDot = $('.fixed-section .tr-dots .active');
+    window.setTimeout(() => {
+        paginRightFinished = true;
+    }, 1000)
+}
+
+function paginLeft() {
+    paginLeftFinished = false;
     if (parseInt(secNum) > 1) {
-        this.classList.remove('disabled');
         for (let sec of sections) {
             sec.classList.remove('actived-sec');
         }
         $('.sec-' + (parseInt(secNum) - 1)).classList.add('actived-sec');
         secNum = parseInt(secNum) - 1
-        if (parseInt(secNum) == 1) {
-            this.classList.add('disabled');
-        }
         trActivate(parseInt(secNum));
     };
+    activatedDot = $('.fixed-section .tr-dots .active');
+    window.setTimeout(() => {
+        paginLeftFinished = true;
+    }, 1000)
+}
+$('.pagin .right').onclick = function () {
+    if (paginRightFinished == true) {
+        paginRight();
+    } else {
+        console.log('not finished');
+    }
+};
+$('.pagin .left').onclick = function () {
+    if (paginLeftFinished == true) {
+        paginLeft();
+    } else {
+        console.log('not finished');
+    }
 };
 
 // Animated Letters
@@ -169,6 +192,7 @@ $('.see-all').addEventListener('click', function () {
 // Pagination with mousewheel
 let elementColor = $('.fixed-section .pagin span').style.color;
 let elementTransform = $('.fixed-section .pagin span').style.transform;
+
 function hoverIt(element) {
     element.style.color = 'var(--main-color)';
     element.style.transform = 'translateY(-2px)';
@@ -192,36 +216,34 @@ document.addEventListener('keydown', function (e) {
     e = e || window.event;
     console.log(e.key);
     if (e.key == 'ArrowUp' || e.code == 'ArrowUp') {
-        hoverIt($('.fixed-section .pagin .left'))
-        $('.fixed-section .pagin .left').click();
+        if (paginLeftFinished == true) {
+            paginLeft();
+            hoverIt($('.fixed-section .pagin .left'))
+        };
     } else if (e.key == 'ArrowDown' || e.code == 'ArrowDown') {
-        hoverIt($('.fixed-section .pagin .right'))
-        $('.fixed-section .pagin .right').click();
+        if (paginRightFinished == true) {
+            paginRight();
+            hoverIt($('.fixed-section .pagin .Right'))
+        };
     }
 });
 
 
 // Hammer.js
 var myElement = $('.master .changed-section');
-
-// create a simple instance
-// by default, it only adds horizontal recognizers
 var mc = new Hammer(myElement);
-
-// let the pan gesture support all directions.
-// this will block the vertical scrolling on a touch-device while on the element
-mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-
-// listen to events...
-// mc.on("panleft panright panup pandown tap press", function(ev) {
-    //     //myElement.textContent = ev.type +" gesture detected.";
-    //     console.log(ev.type +" gesture detected.")
-    // });
-    mc.on("panup", function(ev) {
-        $('.fixed-section .pagin .left').click();
+mc.get('pan').set({
+    direction: Hammer.DIRECTION_ALL
+});
+mc.on("pandown", function (ev) {
+    if (paginLeftFinished == true) {
+        paginLeft();
         hoverIt($('.fixed-section .pagin .left'))
-    });
-    mc.on("pandown", function(ev) {
-        $('.fixed-section .pagin .right').click();
-        hoverIt($('.fixed-section .pagin .right'))
+    };
+});
+mc.on("panup", function (ev) {
+    if (paginRightFinished == true) {
+        paginRight();
+        hoverIt($('.fixed-section .pagin .Right'))
+    };
 });
