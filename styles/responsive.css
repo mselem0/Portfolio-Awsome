@@ -37,12 +37,15 @@
 /* Start Section-2 */
 @media (max-width: 576px) {
     .master .changed-section .sec-2 img {
-        height: 100px;
-        width: 100px !important;
+        height: 146px;
+        width: 146px !important;
     }
     .changed-section .sec-2 .skills h2 {
         font-size: 24px;
         margin-bottom: 15px;
+    }
+    .changed-section .sec-2 .skills .skill h4 {
+        font-size: .7rem
     }
 }
 /* End Section-2 */
