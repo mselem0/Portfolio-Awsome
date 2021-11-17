@@ -6,8 +6,19 @@ $_ = function (e) {
 return document.querySelectorAll(e);
 };
 
+let typeItHandler;
+// TypeIt Plugin
+document.addEventListener("DOMContentLoaded", function () {
+    typeItHandler = new TypeIt("#element", {
+        strings: ["&lt;/ Creative Front-End Developer &gt;"],
+    });
+});
+
 // Journey
 function startJourney() {
+
+// Activate TypeIt
+typeItHandler.go();
 
 // Sound Utility
 let played = false;
