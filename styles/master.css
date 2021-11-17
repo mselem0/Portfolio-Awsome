@@ -228,7 +228,7 @@ body {
 
 .master .changed-section .sec {
     position: fixed;
-    top: 100vh;
+    top: 200vh;
     left: 0;
     transition: top 1s ease-in-out;
     width: 100%;
