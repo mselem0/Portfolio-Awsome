@@ -57,6 +57,25 @@ body {
 
 /* End General */
 
+/* Start Sound Notification */
+.sound-notify {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000e8;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+    transition: top 1s ease-out;
+}
+.sound-notify.hide {top: -100vh}
+.sound-notify p {
+    color: #eee;
+    font-family: 'Mochiy Pop P One';
+    font-size: 1.1rem;
+}
+/* End Sound Notification */
+
 /* Start Master */
 .master {
     position: fixed;
@@ -223,9 +242,6 @@ body {
     transform: translate(-50%, -50%);
     width: 95%;
     height: 68%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .master .changed-section .sec.actived-sec {
@@ -283,9 +299,11 @@ body {
     background-color: #eeeeee4a;
     text-align: center;
     border-radius: 2px;
+    transition: transform .1s ease-in-out;
 }
 .master .changed-section .sec-1 .content .social a:hover {
     color: #ffffff;
+    transform: scale(1.2);
 }
 @keyframes showLinks {
     to {
