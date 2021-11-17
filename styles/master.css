@@ -68,7 +68,7 @@ body {
     left: 0;
     transition: top 1s ease-out;
 }
-.sound-notify.hide {top: -200vh}
+.sound-notify.hide {top: -200vh; z-index: 99;}
 .sound-notify p {
     color: #eee;
     font-family: 'Mochiy Pop P One';
