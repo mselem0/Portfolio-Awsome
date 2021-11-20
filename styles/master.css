@@ -274,29 +274,25 @@ body {
 
 .master .changed-section .sec-1 .content p {
     color: #7e7e7e;
-    margin-left: 35px;
+    text-align: center;
     font-weight: bold;
     font-family: 'walsheimM';
     font-size: 1.2rem;
 }
 .master .changed-section .sec-1 .content .social {
-    position: fixed;
-    top: 180px;
-    left: 0;
-    display: flex;
-    flex-direction: column;
+    text-align: center;
 }
 .master .changed-section .sec-1 .content .social a{
     text-decoration: none;
-    color: #ffffffa6;
-    font-size: 11px;
+    color: #eee;
+    font-size: 1rem;
     opacity: 0;
     animation: showLinks .5s linear forwards;
     animation-delay: 1s;
     display: inline-block;
     padding: 3px 10px;
     margin-bottom: 10px;
-    background-color: #eeeeee4a;
+    background-color: var(--main-color);
     text-align: center;
     border-radius: 2px;
     transition: transform .1s ease-in-out;

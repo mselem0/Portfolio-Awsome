@@ -25,7 +25,6 @@
     }
     .master .changed-section .sec-1 .content p {
         font-size: 11px;
-        margin-left: 15px;
     }
 }
 @media (min-width: 576px) {
@@ -37,9 +36,7 @@
     }
     .master .changed-section .sec-1 .content p {
         font-size: 15px;
-        margin-left: 15px;
     }
-    .master .changed-section .sec-1 .content .social  {top: 210px}
 }
 @media (min-width: 768px) {
     .master .changed-section .sec-1 .content h1 {
@@ -50,7 +47,6 @@
     .master .changed-section .sec-1 .content h1 {
         font-size: 3rem;
     }
-    .master .changed-section .sec-1 .content .social  {top: 227px}
 }
 @media (min-width: 1200px) {
     .master .changed-section .sec-1 .content h1 {
@@ -60,11 +56,8 @@
     .master .changed-section .animated-heading span {
         margin-left: -14px;
     }
-    .master .changed-section .sec-1 .content .social  {top: 275px}
-    .master .changed-section .sec-1 .content .social a {font-size: 15px;}
     .master .changed-section .sec-1 .content p {
         font-size: 20px;
-        margin-left: 45px;
     }
 }
 /* End Section-1 */
