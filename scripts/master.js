@@ -268,7 +268,7 @@ if (e.key == 'ArrowUp' || e.code == 'ArrowUp') {
 } else if (e.key == 'ArrowDown' || e.code == 'ArrowDown') {
     if (paginRightFinished == true) {
         paginRight();
-        hoverIt($('.fixed-section .pagin .Right'))
+        hoverIt($('.fixed-section .pagin .right'))
     };
 }
 });
@@ -289,7 +289,7 @@ if (paginLeftFinished == true) {
 mc.on("panup", function (ev) {
 if (paginRightFinished == true) {
     paginRight();
-    hoverIt($('.fixed-section .pagin .Right'))
+    hoverIt($('.fixed-section .pagin .right'))
 };
 });
 }
