@@ -28,6 +28,11 @@
 
 
 /* Start General */
+canvas{
+  display:block;
+  vertical-align:bottom;
+  position: absolute;
+}
 * {
     box-sizing: border-box;
 }
@@ -70,9 +75,12 @@ body {
 }
 .sound-notify.hide {top: -200vh; z-index: 99;}
 .sound-notify p {
-    color: #eee;
-    font-family: 'Mochiy Pop P One';
+color: #eee;
     font-size: 1.1rem;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: auto;
+    margin-bottom: 1rem;
 }
 /* End Sound Notification */
 
