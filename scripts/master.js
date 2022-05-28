@@ -38,7 +38,9 @@ if (played) {
 // Animated Letters On Reload
 let lettersSec1 = [...$_('.changed-section .sec-1 h1 span')];
 let lettersSec2 = [...$_('.changed-section .sec-2 h2 span')];
+let lettersSec3 = [...$_('.changed-section .sec-3 h2 span')];
 let lettersSec2Finished = false;
+let lettersSec3Finished = false;
 
 function animatedLetters(letters) {
 let i = 0;
@@ -100,6 +102,7 @@ for (let animE of animatedElements) {
 };
 animatedHoveredLetters(lettersSec1);
 animatedHoveredLetters(lettersSec2);
+animatedHoveredLetters(lettersSec3);
 
 // TR Dots Utility
 let secNum = 1;
@@ -130,6 +133,13 @@ li.addEventListener('click', function () {
             animatedLetters(lettersSec2);
             animateProgress();
             lettersSec2Finished = true;
+        }, 500)
+    };
+    if (li.dataset.slide == '3' && lettersSec3Finished == false) {
+        window.setTimeout(() => {
+            animatedLetters(lettersSec3);
+            animateProgress();
+            lettersSec3Finished = true;
         }, 500)
     };
 })
@@ -179,11 +189,18 @@ activatedDot = $('.fixed-section .tr-dots .active');
 window.setTimeout(() => {
     paginRightFinished = true;
 }, 1000);
-if (lettersSec2Finished == false) {
+    if ($('.tr-dots li[data-slide="2"]').classList.contains('active') &&lettersSec2Finished == false) {
     window.setTimeout(() => {
         animatedLetters(lettersSec2);
         animateProgress();
         lettersSec2Finished = true;
+    }, 500)
+};
+if ($('.tr-dots li[data-slide="3"]').classList.contains('active') && lettersSec3Finished == false) {
+    window.setTimeout(() => {
+        animatedLetters(lettersSec3);
+        animateProgress();
+        lettersSec3Finished = true;
     }, 500)
 };
 }

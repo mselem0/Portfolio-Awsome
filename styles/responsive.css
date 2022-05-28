@@ -64,11 +64,13 @@
 
 /* Start Section-2 */
 @media (max-width: 576px) {
+    .master .changed-section .sec-2 .content {top: 45% !important}
     .master .changed-section .sec-2 img {
-        height: 146px;
-        width: 146px !important;
+        height: 220px;
+        width: 220px !important;
     }
-    .changed-section .sec-2 .skills h2 {
+    .changed-section .sec-2 .skills h2,
+    .changed-section .sec-3 .content h2 {
         font-size: 24px;
         margin-bottom: 15px;
     }
