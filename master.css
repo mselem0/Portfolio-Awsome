@@ -1,0 +1,423 @@
+/* Fonts */
+@font-face {
+    font-family: freight;
+    src: url(../fonts/FreightMicro-Book.woff);
+}
+
+@font-face {
+    font-family: freightM;
+    src: url(../fonts/FreightMicro-Medium.woff);
+}
+
+@font-face {
+    font-family: walsheimM;
+    src: url(../fonts/gt-walsheim-medium-web.woff);
+}
+
+@font-face {
+    font-family: walsheim;
+    src: url(../fonts/gt-walsheim-web.woff);
+}
+
+@font-face {
+    font-family: Mochiy Pop P One;
+    src: url(../fonts/MochiyPopPOne-Regular.ttf);
+}
+
+/* Fonts */
+
+
+/* Start General */
+canvas {
+    display: block;
+    vertical-align: bottom;
+    position: absolute;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222;
+    font-family: walsheimM, helvetica, arial, sans-serif;
+}
+
+:root {
+    --main-color: #E91E63;
+}
+
+.canva {
+    position: fixed;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .2;
+}
+
+.flex-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .disabled {opacity: .5; pointer-events: none;} */
+#particles-js {
+    z-index: -1;
+}
+
+/* End General */
+
+/* Start Sound Notification */
+.sound-notify {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+    opacity: 100%;
+    transition: opacity .5s ease-in;
+    -webkit-transition: opacity .5s ease-in;
+    -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+    -o-transition: opacity .5s ease-in;
+}
+
+.sound-notify.hide {
+    opacity: 0;
+    z-index: 99;
+}
+
+.sound-notify p {
+    color: #eee;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 1rem auto;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    color: #a6a6a6;
+}
+
+/* End Sound Notification */
+
+/* Start Master */
+.master {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+}
+
+.master .fixed-section,
+.master .changed-section {
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    position: fixed;
+}
+
+/* Start Fixed Elemnts */
+.master .fixed-section {
+    color: #fff;
+}
+
+.master .fixed-section .sound-icon,
+.master .fixed-section .tr-dots,
+.master .fixed-section .see-all,
+.master .fixed-section .pagin {
+    position: absolute;
+    z-index: 999999999;
+    user-select: none;
+}
+
+.master .fixed-section .see-all {
+    top: 25px;
+    left: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.master .fixed-section .sound-icon {
+    right: 10px;
+    top: 10px;
+    border-radius: 3px;
+    color: blue;
+    cursor: pointer;
+}
+
+.master .fixed-section .sound-icon.stopped {
+    opacity: .5;
+}
+
+.master .fixed-section .tr-dots {
+    list-style: none;
+    bottom: 15px;
+    right: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.master .fixed-section .tr-dots li {
+    width: 70px;
+    height: 11px;
+    /* border-radius: 50%; */
+    cursor: pointer;
+    opacity: 1;
+    margin-left: auto;
+    position: relative;
+}
+
+.master .fixed-section .tr-dots li span {
+    position: absolute;
+    top: -5px;
+    left: -45px;
+    font-family: Freight, helvetica, arial, sans-serif;
+    font-size: 1.1REM;
+    opacity: 0;
+    transition: opacity .1s linear;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.master .fixed-section .tr-dots li::after {
+    content: '';
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 20%;
+    width: 70%;
+    transition: width .2s linear;
+}
+
+.master .fixed-section .tr-dots li:hover::after,
+.master .fixed-section .tr-dots .active::after {
+    background: var(--main-color);
+    width: 100%;
+}
+
+.master .fixed-section .tr-dots li:hover span,
+.master .fixed-section .tr-dots .active span {
+    opacity: 1;
+}
+
+.master .fixed-section .pagin {
+    font-size: 1.2rem;
+    color: #c3c3c3;
+    font-weight: bold;
+    bottom: 15px;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.master .fixed-section .pagin .right,
+.master .fixed-section .pagin .left {
+    cursor: pointer;
+    color: #fff;
+    transition: transform .2s linear;
+}
+
+.master .fixed-section .pagin span:hover {
+    color: var(--main-color)
+}
+
+.master .fixed-section .pagin .left:hover {
+    transform: translateY(-2px)
+}
+
+.master .fixed-section .pagin .right:hover {
+    transform: translateY(2px)
+}
+
+/* Start Fixed Elemnts */
+
+/* Start Changable Elements */
+.master .changed-section .animated-heading {
+    font-size: 4rem;
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+.master .changed-section .animated-heading span {
+    color: #fff;
+    display: inline-block;
+    transition: color .3s ease-in-out;
+    margin-left: -10px;
+    opacity: 0;
+}
+
+.master .changed-section .animated-heading span.special {
+    color: var(--main-color) !important;
+}
+
+.master .changed-section .sec {
+    position: fixed;
+    top: 200vh;
+    left: 0;
+    transition: top 1s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.master .changed-section .sec .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 68%;
+}
+
+.master .changed-section .sec.actived-sec {
+    top: 0
+}
+
+/* Section-1 */
+
+.master .changed-section .sec-1 {
+    background-image: url(../images/spider.jpg);
+    background-size: cover;
+    background-position: top;
+    color: #fff;
+}
+
+.master .changed-section .sec-1 .content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-family: 'Mochiy Pop P One', sans-serif;
+    width: unset;
+    height: unset;
+    padding: 25px
+}
+
+.master .changed-section .sec-1 .content h1 {
+    font-size: 4rem;
+}
+
+.master .changed-section .sec-1 .content p {
+    color: #7e7e7e;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'walsheimM';
+    font-size: 1.2rem;
+}
+
+.master .changed-section .sec-1 .content .social {
+    text-align: center;
+}
+
+.master .changed-section .sec-1 .content .social a {
+    text-decoration: none;
+    color: #eee;
+    font-size: 1rem;
+    opacity: 0;
+    animation: showLinks .5s linear forwards;
+    animation-delay: 1s;
+    display: inline-block;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+    background-color: var(--main-color);
+    text-align: center;
+    border-radius: 2px;
+    transition: transform .1s ease-in-out;
+}
+
+.master .changed-section .sec-1 .content .social a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+}
+
+@keyframes showLinks {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Section-1 */
+
+/* Section-2 */
+.changed-section .sec-2 .skills {
+    background-color: #4848484d;
+    padding: 30px;
+    border: 1px solid #cccccc30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.changed-section .sec-2 .skills .skill h4 {
+    margin: 15px 0 5px 0;
+    font-size: .9rem;
+    font-family: sans-serif;
+}
+
+.changed-section .sec-2 .skills h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.changed-section .sec-2 .skills .skill .progress {
+    background-color: #e9ecef1a;
+    /* border-radius: 0; */
+    height: 3px;
+}
+
+.changed-section .sec-2 .skills .skill .progress .progress-bar {
+    width: 0;
+    transition: width 2s ease-in-out;
+}
+
+/* Section-2 */
+
+
+/* Section-3 */
+.changed-section .sec-4 .testemonials .client {
+background-color: #1c1919db;
+    border-radius: 4px;
+    color: #7d7d7d;
+    font-size: 0.9rem;
+    font-style: italic;
+    padding: 2rem 1rem 0;
+    box-shadow: 0 .5rem 1rem rgba(255,255,255,.13)!important;
+    border: 1px solid #202020
+}
+
+/* Section-3 */
+
+/* End Changable Elements */
+.changed-section .sec-3 .projects .swiper {
+    width: 90%;
+}
+
+.changed-section .sec-3 .projects .swiper a {
+    position: relative;
+    display: block;
+}
+
+.changed-section .sec-3 .projects .swiper a .proj-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000ad;
+    background: #e91e63c7;
+    color: #fff;
+    font-size: 3rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.changed-section .sec-3 .projects .swiper a:hover .proj-content {
+    opacity: 1;
+}
+
+/* End Master */
+
+/* Start Bootloader */
