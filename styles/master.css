@@ -28,11 +28,12 @@
 
 
 /* Start General */
-canvas{
-  display:block;
-  vertical-align:bottom;
-  position: absolute;
+canvas {
+    display: block;
+    vertical-align: bottom;
+    position: absolute;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -55,6 +56,13 @@ body {
     opacity: .2;
 }
 
+.flex-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* .disabled {opacity: .5; pointer-events: none;} */
 #particles-js {
     z-index: -1;
@@ -67,21 +75,33 @@ body {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: #000000e8;
+    background-color: #000;
     z-index: 9999999;
     top: 0;
     left: 0;
-    transition: top 1s ease-out;
+    opacity: 100%;
+    transition: opacity .5s ease-in;
+    -webkit-transition: opacity .5s ease-in;
+    -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+    -o-transition: opacity .5s ease-in;
 }
-.sound-notify.hide {top: -200vh; z-index: 99;}
+
+.sound-notify.hide {
+    opacity: 0;
+    z-index: 99;
+}
+
 .sound-notify p {
-color: #eee;
+    color: #eee;
     font-size: 1.1rem;
     font-weight: bold;
-    font-size: 2rem;
-    margin: auto;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin: 1rem auto;
+    font-family: 'Mochiy Pop P One', sans-serif;
+    color: #a6a6a6;
 }
+
 /* End Sound Notification */
 
 /* Start Master */
@@ -259,9 +279,9 @@ color: #eee;
 /* Section-1 */
 
 .master .changed-section .sec-1 {
-    background-image: url(../images/pat.png);
+    background-image: url(../images/spider.jpg);
     background-size: cover;
-    background-position: right center;
+    background-position: top;
     color: #fff;
 }
 
@@ -287,10 +307,12 @@ color: #eee;
     font-family: 'walsheimM';
     font-size: 1.2rem;
 }
+
 .master .changed-section .sec-1 .content .social {
     text-align: center;
 }
-.master .changed-section .sec-1 .content .social a{
+
+.master .changed-section .sec-1 .content .social a {
     text-decoration: none;
     color: #eee;
     font-size: 1rem;
@@ -305,19 +327,22 @@ color: #eee;
     border-radius: 2px;
     transition: transform .1s ease-in-out;
 }
+
 .master .changed-section .sec-1 .content .social a:hover {
     color: #ffffff;
     transform: scale(1.2);
 }
+
 @keyframes showLinks {
     to {
         opacity: 1;
     }
 }
+
 /* Section-1 */
 
 /* Section-2 */
-.changed-section .sec-2 .skills{
+.changed-section .sec-2 .skills {
     background-color: #4848484d;
     padding: 30px;
     border: 1px solid #cccccc30;
@@ -325,6 +350,7 @@ color: #eee;
     flex-direction: column;
     justify-content: center;
 }
+
 .changed-section .sec-2 .skills .skill h4 {
     margin: 15px 0 5px 0;
     font-size: .9rem;
@@ -341,6 +367,7 @@ color: #eee;
     /* border-radius: 0; */
     height: 3px;
 }
+
 .changed-section .sec-2 .skills .skill .progress .progress-bar {
     width: 0;
     transition: width 2s ease-in-out;
@@ -348,7 +375,48 @@ color: #eee;
 
 /* Section-2 */
 
+
+/* Section-3 */
+.changed-section .sec-4 .testemonials .client {
+background-color: #1c1919db;
+    border-radius: 4px;
+    color: #7d7d7d;
+    font-size: 0.9rem;
+    font-style: italic;
+    padding: 2rem 1rem 0;
+    box-shadow: 0 .5rem 1rem rgba(255,255,255,.13)!important;
+    border: 1px solid #202020
+}
+
+/* Section-3 */
+
 /* End Changable Elements */
+.changed-section .sec-3 .projects .swiper {
+    width: 90%;
+}
+
+.changed-section .sec-3 .projects .swiper a {
+    position: relative;
+    display: block;
+}
+
+.changed-section .sec-3 .projects .swiper a .proj-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000ad;
+    background: #e91e63c7;
+    color: #fff;
+    font-size: 3rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.changed-section .sec-3 .projects .swiper a:hover .proj-content {
+    opacity: 1;
+}
 
 /* End Master */
 
