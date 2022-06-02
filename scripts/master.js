@@ -370,7 +370,7 @@ function startJourney() {
 }
 
 // Start Journey
-$('.sound-notify .btn').addEventListener('click', function () {
+$('.sound-notify .animated-button').addEventListener('click', function () {
     this.parentElement.parentElement.classList.add('hide');
     window.setTimeout(function () {
         $('.sound-notify').style.display = 'none';
