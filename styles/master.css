@@ -93,13 +93,11 @@ body {
 }
 
 .sound-notify p {
-    color: #eee;
-    font-size: 1.1rem;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin: 1rem auto;
-    font-family: 'Mochiy Pop P One', sans-serif;
-    color: #a6a6a6;
+    font-family: sans-serif;
+    color: #d4d4d4;
 }
 
 /* End Sound Notification */
@@ -388,9 +386,6 @@ background-color: #1c1919db;
     border: 1px solid #202020
 }
 
-/* Section-3 */
-
-/* End Changable Elements */
 .changed-section .sec-3 .projects .swiper {
     width: 90%;
 }
@@ -417,6 +412,35 @@ background-color: #1c1919db;
 .changed-section .sec-3 .projects .swiper a:hover .proj-content {
     opacity: 1;
 }
+/* Section-3 */
+
+/* Section-4 */
+.changed-section .sec-4 .testemonials .carousel-inner {
+        border-radius: 9px;
+    box-shadow: 0 .5rem 1rem rgba(255,255,255,.3)!important;
+    border: 2px solid #e91e63
+}
+.changed-section .sec-4 .testemonials .carousel-item {
+    position: relative;
+}
+.changed-section .sec-4 .testemonials .carousel-item a {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: #e91e63;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    border: 1px solid #cbcbcb;
+}
+
+/* Section-4 */
+
+/* End Changable Elements */
 
 /* End Master */
 
